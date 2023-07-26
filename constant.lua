@@ -1,6 +1,6 @@
 local tab = {}
 function get_constant(func, index)
-	for i,v in pairs(getconstants(ola)) do
+	for i,v in pairs(getconstants(func)) do
 		if v == index or i == index then
 			return i
 		end
