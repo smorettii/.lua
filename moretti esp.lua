@@ -116,7 +116,7 @@ function add_esp(player)
                     HealthOutline.Visible = espConfig.healthbar 
                     HealthOutline.Size = Vector2.new(1, Box.Size.Y)
                     HealthOutline.Position = Box.Position + Vector2.new(-6, 0)
-                    HealthOutline.Thickness = 3
+                    HealthOutline.Thickness = 2
 
                     NameEsp.Visible = espConfig.names 
                     NameEsp.OutlineColor = (getgenv().espConfig.esp_color == 'team_color' and player.TeamColor.Color) or getgenv().espConfig.esp_color
