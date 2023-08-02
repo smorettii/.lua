@@ -4,6 +4,12 @@ for i,v in pairs(game.CoreGui:GetChildren()) do
         v:Destroy()
     end
 end
+
+moretti.Main.Activates.Template.Visible = false 
+moretti.Main.Tabs.Tab.ButtonTemplate.Visible = false 
+moretti.Main.Tabs.Tab.ToggleExample.Visible = false
+moretti.Main.Tabs.Tab.Visible = false 
+
 moretti.Parent = game.CoreGui
 
 moretti.Main.Active = true 
