@@ -1,4 +1,4 @@
-local moretti = game:GetObjects("rbxassetid://14280669016")[1]
+local moretti = game:GetObjects("rbxassetid://14281518045")[1]
 for i,v in pairs(game.CoreGui:GetChildren()) do 
     if v.Name == "AlesitoHub" then 
         v:Destroy()
