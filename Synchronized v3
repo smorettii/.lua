@@ -1,0 +1,312 @@
+local library = {}
+
+function library:CreateWindow(name)
+    for i,v in pairs(cloneref(game:GetService("CoreGui")):GetChildren()) do 
+        if v.Name == '' then 
+            v:Destroy()
+        end
+    end
+    local ScreenGui = Instance.new("ScreenGui")
+    local Frame = Instance.new("ImageLabel")
+    local Shadow = Instance.new("ImageLabel")
+    local TextLabel = Instance.new("TextLabel")
+    local underline = Instance.new("Frame")
+    local hideshow = Instance.new("ImageButton")
+    local ContainerAll = Instance.new("Frame")
+    local TabsOpen = Instance.new("ImageLabel")
+    local Buttons = Instance.new("Frame")
+    local UIListLayout = Instance.new("UIListLayout")
+    local Tabs = Instance.new("ImageLabel")
+
+
+    
+    
+    ScreenGui.Parent = cloneref(game:GetService("CoreGui"))
+    ScreenGui.Name = ''
+
+    Frame.Name = "Frame"
+    Frame.Parent = ScreenGui
+    Frame.BackgroundColor3 = Color3.fromRGB(6, 6, 6)
+    Frame.BackgroundTransparency = 1.000
+    Frame.Position = UDim2.new(0.0795795768, 0, 0.28536585, 0)
+    Frame.Size = UDim2.new(0, 510, 0, 272)
+    Frame.Image = "rbxassetid://3570695787"
+    Frame.ImageColor3 = Color3.fromRGB(6, 6, 6)
+    Frame.ScaleType = Enum.ScaleType.Slice
+    Frame.SliceCenter = Rect.new(100, 100, 100, 100)
+    Frame.SliceScale = 0.040
+    
+    Shadow.Name = "Shadow"
+    Shadow.Parent = Frame
+    Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    Shadow.BackgroundTransparency = 1.000
+    Shadow.Position = UDim2.new(0.5, 0, 0.5, 2)
+    Shadow.Size = UDim2.new(1, 20, 1, 20)
+    Shadow.ZIndex = 0
+    Shadow.Image = "rbxassetid://1316045217"
+    Shadow.ImageTransparency = 0.860
+    Shadow.ScaleType = Enum.ScaleType.Slice
+    Shadow.SliceCenter = Rect.new(10, 10, 118, 118)
+    
+    TextLabel.Parent = Frame
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TextLabel.BorderSizePixel = 0
+    TextLabel.Position = UDim2.new(0.0196078438, 0, 0, 0)
+    TextLabel.Size = UDim2.new(0, 500, 0, 36)
+    TextLabel.Font = Enum.Font.Nunito
+    TextLabel.Text = name or "Synchronized <font color='rgb(255,0,0)'>V3</font>"
+    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.TextSize = 29.000
+    TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+    TextLabel.RichText = true
+    
+    underline.Name = "underline"
+    underline.Parent = Frame
+    underline.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    underline.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    underline.BorderSizePixel = 0
+    underline.Position = UDim2.new(0, 0, 0.132352948, 0)
+    underline.Size = UDim2.new(0, 510, 0, 1)
+    
+    hideshow.Name = "hide show"
+    hideshow.Parent = Frame
+    hideshow.BackgroundTransparency = 1.000
+    hideshow.Position = UDim2.new(0.93921566, 0, 0.0183823537, 0)
+    hideshow.Rotation = 180.000
+    hideshow.Size = UDim2.new(0, 25, 0, 25)
+    hideshow.ZIndex = 2
+    hideshow.Image = "rbxassetid://3926305904"
+    hideshow.ImageRectOffset = Vector2.new(564, 284)
+    hideshow.ImageRectSize = Vector2.new(36, 36)
+    
+    ContainerAll.Name = "Container All"
+    ContainerAll.Parent = Frame
+    ContainerAll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ContainerAll.BackgroundTransparency = 1.000
+    ContainerAll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ContainerAll.BorderSizePixel = 0
+    ContainerAll.ClipsDescendants = true
+    ContainerAll.Position = UDim2.new(0, 0, 0.136029407, 0)
+    ContainerAll.Size = UDim2.new(0, 510, 0, 235)
+    
+    TabsOpen.Name = "TabsOpen"
+    TabsOpen.Parent = ContainerAll
+    TabsOpen.AnchorPoint = Vector2.new(0.5, 0.5)
+    TabsOpen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TabsOpen.BackgroundTransparency = 1.000
+    TabsOpen.Position = UDim2.new(0.109999999, 5, 0.497999996, 0)
+    TabsOpen.Size = UDim2.new(0, 109, 0, 220)
+    TabsOpen.Image = "rbxassetid://3570695787"
+    TabsOpen.ImageColor3 = Color3.fromRGB(15, 15, 15)
+    TabsOpen.ScaleType = Enum.ScaleType.Slice
+    TabsOpen.SliceCenter = Rect.new(100, 100, 100, 100)
+    TabsOpen.SliceScale = 0.040
+    
+    Buttons.Name = "Buttons"
+    Buttons.Parent = TabsOpen
+    Buttons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Buttons.BackgroundTransparency = 1.000
+    Buttons.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Buttons.BorderSizePixel = 0
+    Buttons.Position = UDim2.new(0.0369999036, 0, 0.0136363637, 0)
+    Buttons.Size = UDim2.new(0, 101, 0, 207)
+    
+    UIListLayout.Parent = Buttons
+    UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    
+    Tabs.Name = "Tabs"
+    Tabs.Parent = ContainerAll
+    Tabs.AnchorPoint = Vector2.new(0.5, 0.5)
+    Tabs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Tabs.BackgroundTransparency = 1.000
+    Tabs.Position = UDim2.new(0.606470585, 5, 0.497999996, 0)
+    Tabs.Size = UDim2.new(0, 379, 0, 220)
+    Tabs.Image = "rbxassetid://3570695787"
+    Tabs.ImageColor3 = Color3.fromRGB(15, 15, 15)
+    Tabs.ScaleType = Enum.ScaleType.Slice
+    Tabs.SliceCenter = Rect.new(100, 100, 100, 100)
+    Tabs.SliceScale = 0.040
+    
+    -- Scripts:
+    
+    local function EMLZQQ_fake_script() -- Frame.Controls 
+        local script = Instance.new('LocalScript', Frame)
+    
+        local opened = true 
+        
+        -- Dont Change Down
+        local hideshowdb = false
+        local containerallnormalsize = UDim2.new(0, 510,0, 235)
+        local containernormalposition = script.Parent["Container All"].Position
+        function getFuncs()
+            return {
+                hideshow = function()
+                    if hideshowdb == false then 
+                        hideshowdb = true 
+                        opened = not opened
+                        if opened == false then 
+                            game:GetService("TweenService"):Create(script.Parent["Container All"], TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 510,0, 0)}):Play()
+                            game:GetService("TweenService"):Create(script.Parent["Container All"], TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Position = containernormalposition + UDim2.new(0, 0, 0, 20)}):Play()
+                            game:GetService("TweenService"):Create(script.Parent.underline, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {BackgroundTransparency = 1}):Play()
+                            game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.7, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 510, 0, 41)}):Play()
+                            game:GetService("TweenService"):Create(script.Parent["hide show"], TweenInfo.new(0.7, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Rotation = 0}):Play()
+                            wait(0.8)	
+                        else
+                            script.Parent["Container All"].Position = containernormalposition
+                            game:GetService("TweenService"):Create(script.Parent.underline, TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {BackgroundTransparency = 0}):Play()
+                            game:GetService("TweenService"):Create(script.Parent, TweenInfo.new(0.7, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 510,0, 272)}):Play()
+                            game:GetService("TweenService"):Create(script.Parent["hide show"], TweenInfo.new(0.7, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Rotation = 180}):Play()	
+                            wait(0.2)
+                            game:GetService("TweenService"):Create(script.Parent["Container All"], TweenInfo.new(0.6, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), {Size = containerallnormalsize}):Play()
+                            wait(0.6)		
+                        end
+                        hideshowdb = false 
+                    end
+                end,
+            }
+        end
+        
+        
+        script.Parent["hide show"].MouseButton1Click:Connect(function()
+            getFuncs().hideshow()
+        end)
+        
+        
+    end
+    coroutine.wrap(EMLZQQ_fake_script)()
+
+    local ctab = {}
+    local tabelas = {}
+    local ligados = {}
+    function ctab:CreateTab(tabname)
+        local TabTemplate = Instance.new("ScrollingFrame")
+        local ignore = Instance.new("TextButton")
+
+        TabTemplate.Name = "TabTemplate"
+        TabTemplate.Parent = Tabs
+        TabTemplate.Active = true
+        TabTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TabTemplate.BackgroundTransparency = 1.000
+        TabTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        TabTemplate.BorderSizePixel = 0
+        TabTemplate.Position = UDim2.new(0.00791556761, 0, 0.0136363637, 0)
+        TabTemplate.Size = UDim2.new(0, 373, 0, 214)
+        TabTemplate.CanvasPosition = Vector2.new(0, 1.52587891e-05)
+        TabTemplate.ScrollBarThickness = 3
+        TabTemplate.Visible = false
+        table.insert(tabelas, TabTemplate)
+        ignore.Name = "ignore"
+        ignore.Parent = TabTemplate
+        ignore.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ignore.BackgroundTransparency = 1.000
+        ignore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ignore.BorderSizePixel = 0
+        ignore.Size = UDim2.new(0, 358, 0, 8)
+        ignore.Font = Enum.Font.SourceSans
+        ignore.Text = ""
+        ignore.TextColor3 = Color3.fromRGB(0, 0, 0)
+        ignore.TextSize = 14.000
+
+        local ButtonOpenTab = Instance.new("TextButton")
+        local keyboard_arrow_right = Instance.new("ImageButton")
+
+        ButtonOpenTab.Name = "ButtonOpenTab"
+        ButtonOpenTab.Parent = Buttons
+        ButtonOpenTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonOpenTab.BackgroundTransparency = 1.000
+        ButtonOpenTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+        ButtonOpenTab.BorderSizePixel = 0
+        ButtonOpenTab.Size = UDim2.new(0, 101, 0, 18)
+        ButtonOpenTab.Font = Enum.Font.Nunito
+        ButtonOpenTab.Text = tabname
+        ButtonOpenTab.TextColor3 = Color3.fromRGB(255, 255, 255)
+        ButtonOpenTab.TextSize = 14.000
+
+        keyboard_arrow_right.Name = "keyboard_arrow_right"
+        keyboard_arrow_right.Parent = ButtonOpenTab
+        keyboard_arrow_right.AnchorPoint = Vector2.new(0.5, 0.5)
+        keyboard_arrow_right.BackgroundTransparency = 1.000
+        keyboard_arrow_right.Position = UDim2.new(0.150000006, 0, 0.5, 0)
+        keyboard_arrow_right.Size = UDim2.new(0, 13, 0, 16)
+        keyboard_arrow_right.ZIndex = 2
+        keyboard_arrow_right.Image = "rbxassetid://3926305904"
+        keyboard_arrow_right.ImageRectOffset = Vector2.new(964, 284)
+        keyboard_arrow_right.ImageRectSize = Vector2.new(36, 36)
+        keyboard_arrow_right.ImageTransparency = 1
+        table.insert(ligados, keyboard_arrow_right)
+
+        ButtonOpenTab.MouseButton1Click:Connect(function()
+            for i,v in pairs(Buttons:GetChildren()) do 
+                local ligado = v:FindFirstChild("keyboard_arrow_right")
+                if ligado then
+                    game:GetService("TweenService"):Create(ligado, TweenInfo.new(0.3), {ImageTransparency = ligado == keyboard_arrow_right and 0 or 1}):Play()
+                end
+            end
+            for i,v in pairs(Tabs:GetChildren()) do 
+                if v.Name == 'TabTemplate' then 
+                    local atual = v == TabTemplate
+
+                    if atual then 
+                        v.Visible = true 
+                        v.Position = UDim2.new(0.00791556761, 0, 0.0336363637, 0)
+                        game:GetService("TweenService"):Create(v, TweenInfo.new(0.3), {Position = UDim2.new(0.00791556761, 0, 0.0136363637, 0)}):Play()
+                    else
+                        v.Visible = false 
+                    end
+                end
+            end
+        end)
+        spawn(function()
+            repeat wait() until #ligados > 0 and #tabelas > 0
+
+            game:GetService("TweenService"):Create(ligados[1], TweenInfo.new(0.3), {ImageTransparency = 0}):Play() 
+            tabelas[1].Visible = true
+        end)
+        local tabf = {}
+
+        function tabf:CreateButton(text, callback)
+            local callback = callback or function() end 
+
+            local ButtonTabTemplate = Instance.new("TextButton")
+            local ButtonTabTemplate_Roundify_4px = Instance.new("ImageLabel")
+
+            ButtonTabTemplate.Name = "ButtonTabTemplate"
+            ButtonTabTemplate.Parent = TabTemplate
+            ButtonTabTemplate.BackgroundColor3 = Color3.fromRGB(7, 7, 7)
+            ButtonTabTemplate.BackgroundTransparency = 1.000
+            ButtonTabTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+            ButtonTabTemplate.BorderSizePixel = 0
+            ButtonTabTemplate.Size = UDim2.new(0, 358, 0, 17)
+            ButtonTabTemplate.ZIndex = 2
+            ButtonTabTemplate.Font = Enum.Font.Nunito
+            ButtonTabTemplate.Text = text
+            ButtonTabTemplate.TextColor3 = Color3.fromRGB(255, 255, 255)
+            ButtonTabTemplate.TextSize = 14.000
+
+            ButtonTabTemplate_Roundify_4px.Name = "ButtonTabTemplate_Roundify_4px"
+            ButtonTabTemplate_Roundify_4px.Parent = ButtonTabTemplate
+            ButtonTabTemplate_Roundify_4px.Active = true
+            ButtonTabTemplate_Roundify_4px.AnchorPoint = Vector2.new(0.5, 0.5)
+            ButtonTabTemplate_Roundify_4px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            ButtonTabTemplate_Roundify_4px.BackgroundTransparency = 1.000
+            ButtonTabTemplate_Roundify_4px.Position = UDim2.new(0.5, 0, 0.5, 0)
+            ButtonTabTemplate_Roundify_4px.Selectable = true
+            ButtonTabTemplate_Roundify_4px.Size = UDim2.new(1, 0, 1, 0)
+            ButtonTabTemplate_Roundify_4px.Image = "rbxassetid://3570695787"
+            ButtonTabTemplate_Roundify_4px.ImageColor3 = Color3.fromRGB(11, 11, 11)
+            ButtonTabTemplate_Roundify_4px.ScaleType = Enum.ScaleType.Slice
+            ButtonTabTemplate_Roundify_4px.SliceCenter = Rect.new(100, 100, 100, 100)
+            ButtonTabTemplate_Roundify_4px.SliceScale = 0.040
+
+            ButtonTabTemplate.MouseButton1Click:Connect(callback)
+        end
+
+        return tabf 
+    end
+
+    return ctab 
+end
+
+return library
