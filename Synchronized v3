@@ -196,6 +196,12 @@ function library:CreateWindow(name)
         TabTemplate.CanvasPosition = Vector2.new(0, 1.52587891e-05)
         TabTemplate.ScrollBarThickness = 3
         TabTemplate.Visible = false
+
+        local UIListLayout = Instance.new("UIListLayout")
+        UIListLayout.Parent = TabTemplate
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.Padding = UDim.new(0,3)
+
         table.insert(tabelas, TabTemplate)
         ignore.Name = "ignore"
         ignore.Parent = TabTemplate
